@@ -149,7 +149,7 @@ body {
   }
   100% {
     border: 1px solid #fff;
-    color: var(--colorSecondary);
+    color: var(--color3);
   }
 }
 
