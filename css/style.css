@@ -39,18 +39,32 @@ body {
   position: relative;
   /* border: 10px solid red; */
   padding: 0.1px;
+  overflow-y: scroll;
 }
+main {
+  /* height: calc(100vh-40px); */
+  height: calc(100vh - 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  /* padding: 0 100px; */
+  overflow-y: auto;
+  /* padding-bottom: 40px; */
+}
 .header {
   /* border: 1px solid red; */
-  width: auto;
-  height: auto;
+  width: 100%;
+  min-height: 35px;
+
   background-color: var(--colorA);
   color: var(--colorC);
   /* background-image: linear-gradient(to left, #00aeef 80%, rgba(57, 99, 129, 0.7) 100%); */
   display: flex;
   justify-content: space-evenly;
-  padding-top: 5px;
+  padding: 5px;
+  /* position: absolute; */
+  top: 0;
 }
 
 .caja-header {
@@ -166,8 +180,8 @@ body {
   align-items: center;
   width: 100%;
   padding: 0.1px;
-  margin-top: 90px;
-  margin-bottom: 50px;
+  /* margin-top: 40px; */
+  /* margin-bottom: 50px; */
   /* border: 1px solid red; */
 }
 
@@ -196,13 +210,16 @@ body {
 .textoMensaje {
   border: 1px solid var(--colorPrymary);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
+  justify-content: start;
+  align-items: start;
+  min-height: 80px;
   width: 60%;
   margin-top: 25px;
   padding: 15px;
   border-radius: 5px;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 60px;
 }
 
 .textoMensaje h3 {
@@ -211,12 +228,18 @@ body {
   font-weight: normal;
   font-size: 1rem;
 }
+.textoMensaje ul {
+  list-style: none;
+  color: white;
+  padding-left: 15px;
+}
 
 footer {
   color: var(--colorC);
   letter-spacing: 1px;
   position: absolute;
   width: 100%;
+  height: 30px;
   background-color: var(--colorA);
   bottom: 0px;
   text-align: center;
@@ -224,6 +247,8 @@ footer {
   font-weight: lighter;
   padding-top: 5px;
   padding-bottom: 5px;
+  position: absolute;
+  bottom: 0;
 }
 
 footer a {
@@ -368,6 +393,15 @@ h2 {
 }
 
 @media screen and (max-width: 500px) {
+  main {
+    height: calc(100vh - 120px);
+  }
+  .container {
+    margin-bottom: 0px;
+  }
+  .principal {
+    margin: 0 auto;
+  }
   .principal h1 {
     font-size: 45px;
   }
@@ -387,6 +421,10 @@ h2 {
 @media screen and (max-width: 470px) {
   .caja-redes .red i {
     font-size: 2rem;
+  }
+  .container h2 {
+    font-size: 1rem;
+    padding: 0 15px;
   }
 }
 
@@ -442,12 +480,20 @@ h2 {
     font-size: 0.8rem;
     padding: 0;
   }
+  .textoMensaje ul {
+    font-size: 0.8rem;
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: 380px) {
   /* .caja-redes .red i{
         font-size: 1.5rem;
     } */
+
+  .header p {
+    font-size: 0.9rem;
+  }
   .principal h1 {
     font-size: 30px;
   }
